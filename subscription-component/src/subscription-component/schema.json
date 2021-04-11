@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SubscriptionComponentSchema",
+    "type": "object",
+    "properties": {
+        "path": {
+            "type": "string",
+            "format": "path",
+            "visible": false
+        },
+        "name": {
+            "type": "string",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            }
+        },
+        "subscriptionManagement": {
+            "description": "Include subscription management code in the component class",
+            "type": "boolean",
+            "default": true,
+            "alias": "subscription"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

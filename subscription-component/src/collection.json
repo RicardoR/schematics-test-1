@@ -1,0 +1,13 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "subscription-component": {
+      "aliases": [
+        "c"
+      ],
+      "description": "A blank schematic.",
+      "factory": "./subscription-component/index#subscriptionComponent",
+      "schema": "./subscription-component/schema.json"
+    }
+  }
+}
