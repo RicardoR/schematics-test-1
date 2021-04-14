@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 const RESOURCE_URL = '<%= url %>';
 
 @Injectable({
-    provideIn: 'root'
+    providedIn: 'root'
 })
 export class <%= classify(name) %>CrudResourceService {
     

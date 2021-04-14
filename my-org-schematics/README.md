@@ -31,3 +31,6 @@ schematics .:hello ricardoRodriguez  --debug=false
 
 # Optional parameter findOne
 schematics .:crud-resource userRole --findOne  --debug=false --force
+
+# In Angular project:
+schematics ../my-org-schematics/src/collection.json:crud-resource lazy-feature/user-role --debug=false 
