@@ -10,16 +10,17 @@ const RESOURCE_URL = '<%= url %>';
 export class <%= classify(name) %>CrudResourceService {
     
     constructor(private httpClient: HttpClient) {}
-
-    <% if (findOne) { %>
+<% if (findOne) { %>
     findOne(id: string): Observable<<%= classify(name) %>> {
         return this.httpClient.get<<%= classify(name) %>>(`${RESOURCE_URL}/${id}`);
-    }
-    <% } %>
-    
+    } <% } 
+%>
     findAll(): Observable <<%= classify(name) %> [] > {
         return this.httpClient.get<<%= classify(name) %>[]>(RESOURCE_URL);
     }
+<% for (let n of entitiesList) {  %>
+    <%= n.name %>: <%= n.type %>; <% } 
+%>
 }
 
 export interface <%= classify(name) %> {

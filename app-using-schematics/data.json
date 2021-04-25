@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "name": "question",
+      "type": "number"
+    },
+    {
+     "name": "title",
+     "type": "string"
+    },
+    {
+      "name": "nameList",
+      "type": "string[]"
+    }
+  ]
+}

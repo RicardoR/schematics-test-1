@@ -24,11 +24,25 @@ export function crudResource(_options: any): Rule {
     _options.name = parsedPath.name;
     _options.path = parsedPath.path;
 
+    const file = tree.read('/data.json') as any;
+    const entitiesList: any[] = [];
+
+    if (file) {
+      const jsonParsed = JSON.parse(file);
+      
+      jsonParsed.data.forEach((element: any) => {
+        _context.logger.info(`Element => ${element.name} : ${element.type}`);
+        entitiesList.push(element);
+      });
+    }
+
+    
     const sourceTemplate = url('./files');
     const sourceParametrizeTemplate = apply(sourceTemplate, [
       template({
         ..._options,
         ...strings,
+        entitiesList,
       }),
       move(parsedPath.path)
     ]);
